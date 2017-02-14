@@ -1,5 +1,4 @@
 object gcd {
-	
 	def gcd(a:BigInt, b:BigInt) : BigInt = {
 		var x = a
 		var y = b
@@ -20,5 +19,6 @@ object gcd {
 		println(gcd(30, 10))
 
 		println(gcd(BigInt("4000000000000000000000008060809060080"), 6000000))
+		println(gcd(BigInt("10333147966386144929666651337523200000000"), BigInt("9666651337523200000000")))
 	}
 }
