@@ -1,3 +1,8 @@
+##################################
+### Göksenin Cakir, Homework 1 ###
+##################################
+
+
 def gcd(a, b):
 	x = a
 	y = b
@@ -31,8 +36,25 @@ class Rational:
 	def __str__ (self):
 		return "%d/%d" % (self.n, self.d)
 
+	def __eq__(self, other):
+		if self.n == other.n and self.d == other.d:
+			return True
+		else:
+			return False
+
+	def reciprocal(self):
+		return "%d/%d" % (self.d, self.n)
+
 
 r1 = Rational(3, 5)
 r2 = Rational(1, 10)
 print(r1 + r2)
 print(Rational(3, 5) + Rational(2, 10))
+print(r1.reciprocal())
+
+r3 = Rational(3, 5)
+r4 = Rational(6, 10)
+
+print(r1==r2)
+print(r1==r3)
+print(r1==r4)

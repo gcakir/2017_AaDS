@@ -1,3 +1,7 @@
+/*
+Göksenin Cakir, Homework 1
+*/
+
 object gcd {
 	def gcd(a:BigInt, b:BigInt) : BigInt = {
 		var x = a
