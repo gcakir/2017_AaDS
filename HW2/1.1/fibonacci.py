@@ -1,3 +1,19 @@
+"""
+
+Göksenin Cakir, Homework 2, Question 1
+
+Two short remarks about the question:
+
+1.) I commented out the part which finds the largest n under 10 seconds,
+ becuase it takes too long. It can for sure be un-commented to display 
+ the result.
+
+2.) I did not use arbitrary precision for floating points because the homework
+ question does not require it. It could be implemented via decimal module or 
+ mpmath library.
+
+"""
+
 from math import *
 from time import *
 
@@ -23,6 +39,9 @@ def linear_fibonacci(x):
 
 def inexact_fibonacci(x):
 	phi = ((1 + sqrt(5)) / 2)
+	# Both of the lines below will print "float".
+	# print(type(phi))
+	# print(type(phi ** x / sqrt(5)))
 	return round(phi ** x / sqrt(5))
 
 print("Naive Fibonacci\n")
@@ -48,7 +67,7 @@ while linear_fibonacci(counter) == inexact_fibonacci(counter):
 	counter += 1
 
 print(counter)
-print("\n\n---\n\n")
+print("\n---\n\n")
 
 counter = 0
 
@@ -64,5 +83,29 @@ while True:
 		break
 	counter += 1
 
+print("The largest number that can be computed under 10 seconds using naive_fibonacci: ", counter)
+print("\n\n---\n\n")
 
-print("The largest number that can be computed under 10 seconds via naive_fibonacci: ", counter)
+
+"""
+
+# I find it better to start counting from 1 million otherwise it takes too long.
+# The result should be somewhere between 1,000,000 and 1,000,100
+counter = 1000000
+
+while True:
+	t1 = perf_counter()
+	#t1 = time()
+	linear_fibonacci(counter)
+	t2 = perf_counter()
+	#t2 = time()
+	#print("For linear_fibonacci(", counter, "): ", round(t2-t1), " seconds", sep='')
+	if (t2 - t1) > 10:
+		counter -= 1
+		break
+	counter += 1
+
+
+print("The largest number that can be computed under 10 seconds using linear_fibonacci: ", counter)
+
+"""
