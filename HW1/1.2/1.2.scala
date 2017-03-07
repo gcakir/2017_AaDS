@@ -1,9 +1,10 @@
 /*
+
 Göksenin Cakir, Homework 1
+
 */
 
 object Rational {
-
 
 	def gcd(a:BigInt, b:BigInt) : BigInt = {
 		var x = a
@@ -15,7 +16,9 @@ object Rational {
 		}
 		return y
 	}
+
 	class Rational(a:BigInt, b:BigInt) {
+		
 		require(b != 0)
 
 		private val g = gcd(a.abs, b.abs)
