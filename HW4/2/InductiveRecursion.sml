@@ -1,3 +1,8 @@
+(*
+Göksenin Cakir
+Homework #4
+*)
+
 datatype intlist = Nil | Cons of (int * intlist)
 
 fun concat(list1: intlist, list2: intlist): intlist = 
